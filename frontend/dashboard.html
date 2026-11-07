@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Overview · Christell Wellness</title>
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebarMount"></aside>
+
+  <main class="main">
+    <header class="topbar" id="topbarMount"></header>
+
+    <div class="content">
+
+      <div class="stat-grid" id="statGrid">
+        <!-- stat cards injected by JS (with skeleton placeholders first) -->
+      </div>
+
+      <div class="card" id="retentionCard" style="margin-bottom:20px;">
+        <div class="card-head">
+          <h2>Retention watch</h2>
+          <a href="at-risk.html" class="btn btn-ghost btn-sm">Open At-Risk list</a>
+        </div>
+        <div class="card-body" id="retentionBody">
+          <div class="skeleton" style="height:18px;"></div>
+        </div>
+      </div>
+
+      <div class="section-row">
+        <div class="card">
+          <div class="card-head">
+            <h2>Bookings, last 7 days</h2>
+            <span class="card-sub" id="trendSubtitle">&nbsp;</span>
+          </div>
+          <div class="card-body">
+            <div id="trendChart" style="min-height:200px;"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <h2>Top service categories</h2>
+            <span class="card-sub">By completed treatments</span>
+          </div>
+          <div class="card-body" id="topCategories">
+            <div class="skeleton" style="height:18px; margin-bottom:14px;"></div>
+            <div class="skeleton" style="height:18px; margin-bottom:14px;"></div>
+            <div class="skeleton" style="height:18px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h2>Recent bookings</h2>
+          <a href="bookings.html" class="btn btn-ghost btn-sm">View all bookings</a>
+        </div>
+        <div class="card-body">
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Patient</th>
+                  <th>Mobile</th>
+                  <th>Appointment</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="recentBookingsBody">
+                <tr><td colspan="4"><div class="skeleton" style="height:18px;"></div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/shell.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

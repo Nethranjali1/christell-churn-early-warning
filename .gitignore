@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.venv/
+
+# Secrets and local settings
+.env
+*.env
+
+# Logs, backups and archives
+*.log
+*backup*/
+*archive*/
+*.bak
+*.zip
+
+# Database dumps and test results that contain records
+*.sql
+!database/christell_erp_schema.sql
+*_results.csv
+
+# Windows
+Thumbs.db
+desktop.ini

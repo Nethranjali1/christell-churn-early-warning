@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Patients · Christell Wellness</title>
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/css/retention.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebarMount"></aside>
+
+  <main class="main">
+    <header class="topbar" id="topbarMount"></header>
+
+    <div class="content">
+      <div class="filters-bar">
+        <div class="field grow">
+          <label for="searchInput">Search patients</label>
+          <div class="input-icon-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <input type="text" id="searchInput" placeholder="Name, NIC or mobile number" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="limitSelect">Rows per page</label>
+          <select id="limitSelect">
+            <option value="10">10</option>
+            <option value="20" selected>20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>&nbsp;</label>
+          <span class="mono" style="font-size:13px; color:var(--ink-soft); padding: 12px 0;" id="resultCount">—</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="name">Patient <span class="sort-arrow"></span></th>
+                <th>NIC</th>
+                <th>Mobile</th>
+                <th>Age / Gender</th>
+                <th>Visits</th>
+                <th>Total spend</th>
+                <th>Last visit</th>
+                <th>Churn risk</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="patientsBody">
+              <tr><td colspan="9"><div class="skeleton" style="height:18px;"></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination" style="padding: 16px 22px;">
+          <span id="paginationInfo">—</span>
+          <div class="pager-btns">
+            <button class="btn btn-ghost btn-sm" id="prevPageBtn">← Prev</button>
+            <button class="btn btn-ghost btn-sm" id="nextPageBtn">Next →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Patient detail slide-over -->
+<div class="overlay-scrim" id="overlayScrim"></div>
+<aside class="slide-over" id="patientSlideOver">
+  <div class="slide-header">
+    <div>
+      <span class="eyebrow" style="font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--sage-text); font-weight:700;">Patient record</span>
+      <h2 id="slideOverName" style="font-size:22px; margin-top:2px;">—</h2>
+    </div>
+    <button class="slide-close" id="slideCloseBtn" aria-label="Close patient record">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="slide-body" id="slideOverBody">
+    <div class="skeleton" style="height:80px; margin-bottom:16px;"></div>
+    <div class="skeleton" style="height:200px;"></div>
+  </div>
+</aside>
+
+<!-- Churn forecast ("Pulse Check") modal -->
+<div class="churn-modal-scrim" id="churnModalScrim">
+  <div class="churn-modal" id="churnModal"></div>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/shell.js"></script>
+<script src="assets/js/retention.js"></script>
+<script src="assets/js/patients.js"></script>
+</body>
+</html>

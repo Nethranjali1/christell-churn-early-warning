@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Retention Report · Christell Wellness</title>
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/css/retention.css" />
+<style>
+  .baseline-bar { display: flex; align-items: flex-end; gap: 16px; flex-wrap: wrap; padding-bottom: 0; }
+  .baseline-bar .field { min-width: 280px; }
+  .window-note { font-size: 13px; color: var(--ink-soft); padding-bottom: 12px; }
+  .window-note strong { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebarMount"></aside>
+  <main class="main">
+    <header class="topbar" id="topbarMount"></header>
+    <div class="content">
+      <div class="risk-summary" id="repSummary"></div>
+
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-head">
+          <h2>Contacted vs not contacted</h2>
+          <span class="card-sub" id="repRunNote">&nbsp;</span>
+        </div>
+        <div class="card-body baseline-bar">
+          <div class="field">
+            <label for="baselineSelect">Baseline run</label>
+            <select id="baselineSelect"><option value="">Latest run</option></select>
+          </div>
+          <div class="window-note" id="windowNote"></div>
+        </div>
+        <div class="card-body" id="repCohort"><div class="skeleton" style="height:18px;"></div></div>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-head"><h2>Contacted patients, by risk tier at first contact</h2></div>
+        <div class="card-body" id="repFirst"><div class="skeleton" style="height:18px;"></div></div>
+      </div>
+
+      <div class="section-row">
+        <div class="card">
+          <div class="card-head"><h2>By channel</h2></div>
+          <div class="card-body" id="repChannel"><div class="skeleton" style="height:18px;"></div></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>By outcome</h2></div>
+          <div class="card-body" id="repOutcome"><div class="skeleton" style="height:18px;"></div></div>
+        </div>
+      </div>
+
+      <div class="insight-note">
+        “Returned” means the patient has an Attended booking after the reference time. This shows association only; it does not prove the outreach caused the visit.
+      </div>
+      <div style="margin-top:14px;">
+        <button class="btn btn-ghost btn-sm" id="exportBtn" type="button">Download de-identified CSV</button>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/shell.js"></script>
+<script src="assets/js/retention.js"></script>
+<script src="assets/js/retention-report.js"></script>
+</body>
+</html>

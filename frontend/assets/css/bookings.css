@@ -1,0 +1,18 @@
+/* Bookings page: status updates (loaded by bookings.html after style.css) */
+.badge-booked { background: #e3eef6; color: #2f5f86; }
+.needs-update-tag {
+  display: inline-block; margin-top: 6px; font-size: 11.5px; font-weight: 700;
+  color: var(--gold-text); letter-spacing: 0.02em;
+}
+.status-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.status-actions .btn { padding: 6px 10px; font-size: 12.5px; }
+.status-actions .btn[disabled] { opacity: 0.55; cursor: wait; }
+.update-notice {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+  padding: 14px 18px; margin-bottom: 18px; border-radius: var(--radius-sm);
+  background: #fbeed2; color: var(--ink); border: 1px solid rgba(0, 0, 0, 0.04);
+  font-size: 14px;
+}
+.update-notice strong { font-weight: 700; }
+.update-notice[hidden] { display: none; }
+.muted-dash { color: var(--ink-soft); }
