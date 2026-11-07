@@ -50,7 +50,7 @@ Web console  ->  PHP API (sign-in, roles, 13 client fields)  ->  Flask /predict 
 | --- | --- | --- |
 | Unit tests | `cd research_flask_api` then `python -m pytest -v test_app.py` | 41 passed |
 | Security and roles | `python tests/role_endpoint_tests.py` | 70/70 checks passed |
-| Live parity | `python tests/live_holdout_test.py http://127.0.0.1:5000/predict` | 397/397 within 0.0001 |
+| Live parity | `cd research_flask_api` then `python ../tests/live_holdout_test.py http://127.0.0.1:5000/predict` | 397/397 within 0.0001 |
 
 ## Main results (holdout of 397 later records)
 
